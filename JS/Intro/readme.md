@@ -50,3 +50,24 @@ const
  - We never use var declaring variables.
  - Variables are named using letters, digits , underscores and dollar signs with no spaces in between.
  - There are three common naming styles but *camelCase* is the most recommended.
+
+
+## Primitive Variables
+These are variables that don't change eg.
+`Strings eg. <"Alice">,
+Numbers eg. <"26">,
+Boolean <which are either 'true' or 'false'>,
+Null <which is used to represent intentional absence of a value>,
+Undefined <which should not be used but instead left to JS to represent a variable the has no value>.`
+
+## Ways to create a string variable
+
+ 1. Using double quotes ("")
+ 2. Using single quotes ('')
+ 3. Using back strings (``)
+ 
+
+Difference between null and undefined
+**Null** means that a variable has deliberately been given no value.
+**Undefined** means that a variable has not yet been assigned.
+ 
