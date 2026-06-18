@@ -17,7 +17,7 @@ console.log("unValue ",unValue ,"Its type is ",typeof unValue)
 
 
 //Copy of console log
-const bonus="5000"
+const bonus="200"
 const salary=50000;
 const salaryGross=bonus+salary
 console.log("Gross salary is ",salaryGross , "Its type ",salaryGross);
