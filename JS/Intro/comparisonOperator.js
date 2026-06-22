@@ -46,3 +46,34 @@ console.log(`value1=${value1}!==value2=${value2} Ans ${strictInequalityy}
 let Inequalityy=value1!=value2
 console.log(`value1=${value1}!=value2=${value2} Ans ${Inequalityy}
     its type is ${typeof Inequalityy}`)
+
+
+
+/*
+    greater than > || greater than or equal to >=
+    less than < || less than or 
+
+*/
+
+// let numb3=20;
+// let numb4=10;
+let numb3=20.2;
+let numb4=20.1;
+console.log(`numb3= ${numb3} and numb4= ${numb4}`)
+console.log(`numb3>numb4 ${numb3>numb4}`);
+
+// let str1="a";
+// let str2="b";
+let str1="a";
+let str2="A";
+console.log(`str1= ${str1} and str2= ${str2}`)
+console.log(`str1>str2 ${str1>str2}`);
+
+console.log(`numb3>=numb4 ${numb3>=numb4}`);
+console.log(`str1>=str2 ${str1>=str2}`);
+
+console.log(`numb4<numb3 ${numb4<numb3}`);
+console.log(`str2<str1 ${str2<str1}`);
+
+console.log(`numb4<=numb3 ${numb4<=numb3}`);
+console.log(`str2<=str1 ${str2<=str1}`);
