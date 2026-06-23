@@ -35,6 +35,7 @@ console.log(z);
 /* 
     || returns the first truthy value
     If there is no truthy value then it gives you the last falsey value
+    
 */
 let k="" || -0 || null || undefined
 console.log("k is ", k);
