@@ -1,5 +1,5 @@
 /*
-SHORT CIRCUIT OPERATORS
+SHORT CIRCUIT OPERATORS -> syntatical sugar
 Falsey means almost false, Truthy means almost true.
     If you know that sth is not falsey then its truthy
     List of falsey
@@ -29,7 +29,7 @@ console.log(bothUserNameOk) // gives truthy and falsey value.
 
 let y=true || false || true || false
 //y=true
-let z=123 ||  0 || 50 || null
+let z=123 ||  -34 || 50 || null
 // z=truthy || falsey || truthy || falsey
 console.log(z);
 /* 
