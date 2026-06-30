@@ -6,14 +6,13 @@
 */
 
 function sayMyName() {
+  //   return 26;
+  //   return true;let y=Math.min(34, 4343, 306);//built-in JavaScript object inside a function that returns the minimum value => 34
 
-    //   return 26;
-    //   return true;
-    let y=Math.min();//function inside a function
   let first_name = "Paulette"; //statement 1
   console.log(`First Name ${first_name}`); //statement 2
   //   return;
-  
+
   let second_name = "Obimbo"; //statement 3
   console.log(`Second Name ${second_name}`); //statement 4
   //   return;
@@ -25,7 +24,9 @@ function sayMyName() {
 
 let sayMyNameValue = sayMyName();
 // console.log(`Function returned ${sayMyName}`);
-console.log(`Function returned ${sayMyNameValue} its type ${typeof sayMyNameValue}`);
+console.log(
+  `Function returned ${sayMyNameValue} its type ${typeof sayMyNameValue}`,
+);
 
 /*
     Scenario 1:
