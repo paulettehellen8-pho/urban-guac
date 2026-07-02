@@ -53,6 +53,3 @@ setInterval(() => {
   console.log(`The current time is ${time}`);
 }, 5000);
 
-/*
-    Create our own callback function
-*/
