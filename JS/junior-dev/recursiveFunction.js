@@ -64,6 +64,44 @@ function calculateFactorial(n) {
 }
 console.log(`The result is ${calculateFactorial()}`);
 
+//TEACHERS WAY
+//factorial(5)
+// function factorial(n = 1, lastSolution = 1) {
+
+//     //end condition
+//     //5<=1-false //4<=1 false
+//     //3<=1 false
+//     //2<=1 false
+//     //1<=1 true
+
+//     if (n <= 1) {
+//         return lastSolution;
+//     }
+
+//     //5*1=5 //4*5=20 // 3*20=60 //2*60=120
+//     const newSolution = n * lastSolution;
+
+//     const newN = n - 1; //5-1=4//4-1=3//3-1=2//2-1=1
+// }
+
+  /*
+    Call stack
+    factorial(1)->1
+    factorial(2)->2
+    factorial(3)->3
+    factorial(4)->4
+    factorial(5)->5
+  */
+  function factorial2(n){
+  if(n <= 1) {
+      return 1;
+  }
+  console.log(n);
+  return n*factorial(n-1);
+}
+
+
+
 /*
     Recursive functions almost function as loops
     Unending loops => takes all the memory, causing you to restart 
