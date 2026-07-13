@@ -163,3 +163,11 @@ for (const key in car) {
    const value = car[key];
    console.log(`car ${key} is ${value}`);
 }
+
+
+
+/*
+   Update object data
+   Before you can update, you need to be able to access the data
+   
+*/
