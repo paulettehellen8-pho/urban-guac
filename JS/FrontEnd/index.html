@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1>
+         X direction <span id="x">0</span> Y direction <span id="y">0</span>
+      </h1>
+      <div id="div1">
+         <h3>List</h3>
+         <ul>
+            <li class="list-item">Item 1</li>
+            <li class="list-item">Item 2</li>
+            <li class="list-item">Item 3</li>
+         </ul>
+      </div>
+      <div id="div2">
+         <h3>Fruits</h3>
+         <ul>
+            <li class="list">Watermelon</li>
+            <li class="list">Pineapple</li>
+            <li class="list">Citrus</li>
+         </ul>
+      </div>
+      <div>
+         <button onclick="original()">Original</button>
+         <button onclick="replace()">Replace content</button>
+         <button onclick="updateFruits()">Update All fruits</button>
+      </div>
+      <div>
+         <button id="btn-event-checker">Event Checker</button>
+         <button id="mouse-over">Mouse Over</button>
+      </div>
+      <!-- <script src="./domAccess.js"></script> -->
+      <script src="./domEvent.js"></script>
+   </body>
+</html>
