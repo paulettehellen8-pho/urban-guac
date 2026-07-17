@@ -16,7 +16,7 @@
                <http client> => runs on a client device(hardware that can connect to the internet)
                   eg. laptop, phones iot devices<fridge ...>
          2. HTTP clients
-            Browser<network tab>, curl<ubuntu-raw html>, POSTMAN ...etc
+            Browser<network tab>, curl<ubuntu-raw html>, POSTMAN<can link backend and front end, can be used for documentation ...etc
 
          3. Communication
             Its a one way communication 
@@ -49,5 +49,38 @@
                Parameters
                request time
    3. Try the same request on postman and curl
+
+   HTTP Methods
+   GET:<fetching data, searching>
+   POST:<posting data> <body:json,file,html>
+   PATCH:<updating data>
+   PUT:<updating data>
+   DELETE:<deleting data>
+
+   HTTP Response <wait for the response>
+   status code:
+      -> 100 to 199: <informational state codes>
+      -> 200 to 299: <success status codes>
+            -204<No content - deleting an account>, 201<created POST, PUT>
+      -> 300 to 399 : <redirectional status code>
+            301 - move permanently
+               eg. twitter.com -> x.com
+      -> 400 to 499: <client made a mistake>
+            404 : Not Found <outlier>
+            401 : Not authorized
+            409 : Forbidden ->Admin, Permissions
+      -> 500 to 599 <server Error>
+            There's nothing you can do on your end
+
+   RESPONSE BODY
+   1.Blob:<binary data>: pictures videos
+   2.html:<mazimobility.com>
+   3.JSON:<>
+
+   How Does rest api relate to js
+      -> github users list
+      -> search github users
+      -> github api
+      -> POSTMAN
 
 */
