@@ -116,3 +116,14 @@ How to render <display> a component
    - open and closing tags
    - You can render a component as many times as you want
    - Components can render other components
+
+
+
+
+**PROJECT**
+Parent - componentA/main
+   Nav - B
+   Side bar - C
+      list - D
+   Equipments Body - E
+      item card - F
