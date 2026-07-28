@@ -99,4 +99,20 @@ FOLDERS AND FILES
 
 
 
+COMPONENTS
+A component is just a react function. It has logic<js>, styling and html
+   -> It is a reusable bit of UI<function> takes input and gives an output
 
+   Rules of creating a component
+   - It is a function
+   - It must start with a capital letter
+   - It must return valid jsx or null
+   - If returns valid jsx, it can only return a react fragment or a single html element
+   - React fragment is used when you want to return multiple html elements [empty tags <></>]
+
+
+How to render <display> a component
+   - Self closing - component name
+   - open and closing tags
+   - You can render a component as many times as you want
+   - Components can render other components
