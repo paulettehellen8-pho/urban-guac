@@ -9,9 +9,9 @@ import logo from "./assets/logo.png";
 /* component naming rules */
 function Navigation() {
    return (
-      <div>
-         <h1>Navigation Section</h1>
-         <img src={logo}></img>
+      <div className="nav">
+         <img src={logo} width="60px" />
+         <input placeholder="Search" />
       </div>
    );
 }
