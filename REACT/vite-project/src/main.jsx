@@ -7,8 +7,12 @@ import { createRoot } from "react-dom/client";
 // import SideBar from "./AmazonPage/SideBar";
 // import MainSection from "./AmazonPage/MainSection";
 
-import AmazonPage from "./AmazonPage";
-import "./index.css";
+// import AmazonPage from "./AmazonPage";
+// import "./index.css";
+
+// import Props from "./Props";
+
+import Mapping from "./Mapping";
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
@@ -18,6 +22,10 @@ createRoot(document.getElementById("root")).render(
       <SideBar />
       <MainSection/> */}
 
-      <AmazonPage />
+      {/* <AmazonPage /> */}
+
+      {/* <Props /> */}
+
+      <Mapping />
    </StrictMode>,
 );
