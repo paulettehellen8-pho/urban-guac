@@ -14,7 +14,7 @@ import { createRoot } from "react-dom/client";
 
 // import Mapping from "./Mapping";
 
-import AmazonPage2 from "./AmazonPage2.0";
+import StateAndEvents from "./StateAndEvents/ClickMe";
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
@@ -28,6 +28,6 @@ createRoot(document.getElementById("root")).render(
 
       {/* <Props /> */}
 
-      <AmazonPage2 />
+      <StateAndEvents />
    </StrictMode>,
 );
