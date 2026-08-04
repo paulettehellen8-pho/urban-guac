@@ -12,7 +12,9 @@ import { createRoot } from "react-dom/client";
 
 // import Props from "./Props";
 
-import Mapping from "./Mapping";
+// import Mapping from "./Mapping";
+
+import AmazonPage2 from "./AmazonPage2.0";
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
@@ -26,6 +28,6 @@ createRoot(document.getElementById("root")).render(
 
       {/* <Props /> */}
 
-      <Mapping />
+      <AmazonPage2 />
    </StrictMode>,
 );
