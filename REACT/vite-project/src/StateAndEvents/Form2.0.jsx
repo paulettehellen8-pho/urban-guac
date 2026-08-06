@@ -13,6 +13,8 @@
 import { useState } from "react";
 
 function Form2() {
+   console.log(useState(""));
+   
    const [input, setInput] = useState({
       name: "",
       email: "",
@@ -94,7 +96,7 @@ function Form2() {
                   type="password"
                   value={input.password} /*input[3]*/
                   onChange={(e) => {
-                     const inputClone = { ...input };
+                     const inputClone = { ...input };//structuredClone(input)
                      inputClone.password = e.target.value;
                      setInput(inputClone);
                   }}

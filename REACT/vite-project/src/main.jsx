@@ -14,7 +14,9 @@ import { createRoot } from "react-dom/client";
 
 // import Mapping from "./Mapping";
 
-import StateAndEvents from "./StateAndEvents/Form";
+// import StateAndEvents from "./StateAndEvents/Form2.0";
+
+import ColorsCircles from "./StateAndEvents/ColorsAndCircles";
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
@@ -28,6 +30,8 @@ createRoot(document.getElementById("root")).render(
 
       {/* <Props /> */}
 
-      <StateAndEvents />
+      {/* <StateAndEvents /> */}
+
+      <ColorsCircles />
    </StrictMode>,
 );
