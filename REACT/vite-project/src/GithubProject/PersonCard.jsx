@@ -1,0 +1,78 @@
+import axios from "axios";
+import { useState, useEffect} from "react";
+import RepositoryList from "./RepositoryList";
+
+function PersonCard(props) {
+   const { person} = props;
+
+
+   const [followers, setFollowers ] = useState([]);
+
+   const [isVisible,setIsVisible]=useState(false);
+
+   const { avatar_url, login, followers_url, repos_url, html_url } = person;
+
+   const getFollowers = async () => {
+      try {
+         let response = await axios({
+            method: "GET",
+            url: followers_url,
+            // headers: {
+            //    
+            //    Accept: "application/vnd.github+json",
+            // },
+            params: { per_page: 999 },
+         });
+         setFollowers(response.data);
+      } catch (e) {}
+   }
+
+   useEffect(()=>{
+      getFollowers();
+   }, [])
+
+   const toGitubProfile=()=>{
+      window.open(html_url, "_blank")
+   }
+
+
+
+   return (
+      <div
+         style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "20px",
+            marginBottom: "20px",
+            border: "2px solid rgba(0,0,0,0.1)",
+            padding: "10px",
+            borderRadius: "10px",
+         }}
+      >
+         <img src={avatar_url} style={{ height: "100px" }} />
+         <div
+            style={{
+               display: "flex",
+               flexDirection: "column",
+               justifyContent: "space-evenly",
+            }}
+         >
+            <div>
+               <b style={{ fontSize: "20px" }}>{login}</b>
+            </div>
+            <div>Followers: {followers.length}</div>
+            <button onClick={toGitubProfile}>Github Profile</button>
+            <button onClick={()=>setIsVisible(true)}>View Repositories</button>
+         </div>
+         <RepositoryList
+         isVisible={isVisible}
+         setIsVisible={setIsVisible}
+         repos_url={repos_url}
+         />
+      </div>
+   );
+}
+
+
+
+export default PersonCard;

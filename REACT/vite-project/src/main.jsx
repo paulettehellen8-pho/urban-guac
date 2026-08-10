@@ -16,7 +16,9 @@ import { createRoot } from "react-dom/client";
 
 // import StateAndEvents from "./StateAndEvents/Form2.0";
 
-import ColorsCircles from "./StateAndEvents/ColorsAndCircles";
+//import SideEffectsConditions from "./SideEffectsConditions/StopWatch";
+
+import GithubProject from "./GithubProject";
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
@@ -32,6 +34,8 @@ createRoot(document.getElementById("root")).render(
 
       {/* <StateAndEvents /> */}
 
-      <ColorsCircles />
+      {/* <SideEffectsConditions /> */}
+
+      <GithubProject />
    </StrictMode>,
 );
