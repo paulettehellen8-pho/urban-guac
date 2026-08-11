@@ -18,8 +18,9 @@ import { createRoot } from "react-dom/client";
 
 //import SideEffectsConditions from "./SideEffectsConditions/StopWatch";
 
-import GithubProject from "./GithubProject";
+// import GithubProject from "./GithubProject";
 
+import Routing from "./Routing";
 createRoot(document.getElementById("root")).render(
    <StrictMode>
       {/* <Navigation />
@@ -36,6 +37,6 @@ createRoot(document.getElementById("root")).render(
 
       {/* <SideEffectsConditions /> */}
 
-      <GithubProject />
+      <Routing />
    </StrictMode>,
 );

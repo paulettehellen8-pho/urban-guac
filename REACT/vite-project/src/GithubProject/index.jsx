@@ -14,10 +14,7 @@ function GithubProject() {
          let response = await axios({
             method: "GET",
             url: "https://api.github.com/users",
-            // headers: {
-            //    
-            //    Accept: "application/vnd.github+json",
-            // },
+        
             params: { per_page: 999 },
          });
          setPeople(response.data);

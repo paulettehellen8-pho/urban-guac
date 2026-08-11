@@ -14,10 +14,7 @@ function TopNav(props) {
          let response = await axios({
             method: "GET",
             url: "https://api.github.com/search/users",
-            // headers: {
-            //    
-            //    Accept: "application/vnd.github+json",
-            // },
+          
             params: {
                q: trimmedString,
             },

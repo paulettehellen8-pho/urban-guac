@@ -17,10 +17,7 @@ function PersonCard(props) {
          let response = await axios({
             method: "GET",
             url: followers_url,
-            // headers: {
-            //    
-            //    Accept: "application/vnd.github+json",
-            // },
+       
             params: { per_page: 999 },
          });
          setFollowers(response.data);

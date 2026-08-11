@@ -25,6 +25,8 @@ function LifeCycle() {
    useEffect(() => {
       //Born(initial) and when it changes
       console.log("N has changed", n);
+      //update setN(n)-> creates an endless loop
+      //setN((n)=>n+1);
    }, [n]);
 
    return (

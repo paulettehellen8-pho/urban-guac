@@ -1,0 +1,13 @@
+import Navigation1 from "./Navigation1";
+import Navigation2 from "./Navigation2";
+
+function About() {
+   return (
+      <div>
+         <Navigation1 />
+         <Navigation2/>
+         <h1>This is the About Us Page</h1>
+      </div>
+   );
+}
+export default About;
