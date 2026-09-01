@@ -5,6 +5,8 @@
 #Python time
 import time
 from datetime import date,datetime
+#capture errors and log
+#use try catch <JS> try except <python>
 
 def logger(func):
    def wrapper(*args,**kwargs):
@@ -17,8 +19,8 @@ def logger(func):
       today=date.today()
       timestamp=datetime.now().isoformat()
 
-      with open(f"{today}.txt", "a") as f:
-         f.write(f"ts:{timestamp}---func:{func.__name__}---time:{diff:.2f}---ms:{diff_in_ms}.ms\n")
+      #with open(f"{today}.txt", "a") as f:
+         #f.write(f"ts:{timestamp}---func:{func.__name__}---time:{diff:.2f}---ms:{diff_in_ms}.ms\n")
 
       return result
    return wrapper
