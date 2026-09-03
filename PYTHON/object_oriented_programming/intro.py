@@ -7,8 +7,12 @@ Concept in programming to make work easy
    By using principles
    1. Encapsulation
          - Keeping data and methods <function> inside a class, while restricting direct access to internal data
+            ()-> __init__, method, what is a property
+
    2. Abstraction
          - Hiding unnecessary complexity or implementation of details.
+            getters and setters, class methods, class properties
+   
    3. Inheritance
          - One class to reuse or extend properties and methods of another class
    4. Polymorphism
@@ -43,7 +47,16 @@ class House:
    #    self.location = new_location
    #    #print(f"{self.owner}'s house location moved to {self.location}")
 
+   #constructor <js> -> initializer
+   def __init__(self,owner,location):
+      print("Class house created. Initializer called")
+      self.owner=owner
+      self.location=location
+
+
+
    def config(self,owner,location):
+      print("Config method has run")
       self.owner=owner
       self.location=location
    
@@ -51,15 +64,17 @@ class House:
    def print_self(self):
       #this <the object itself> self <py>
       print(self)
-      print(self.__dict__)#dictionary <all properties>
+      print(self.__dict__)#dictionary <print all properties>
 
 
 #When accessing object properties use dot notation
 #Bracket notation is reserved for dictionaries
-paulette_house=House()
+#Instance class -> create an object froma class
+paulette_house=House(owner="Paulette",location="London") #__init__()
+#paulette_house.__init__()
 # paulette_house.owner="Paulette"
 # paulette_house.location="Paris"
-paulette_house.config(owner="Paulette",location="London")
+#paulette_house.config(owner="Paulette",location="London")
 print(f"Paulette's House Owner {paulette_house.owner}")
 print(f"Paulette's House Location {paulette_house.location}")
 print(f"Paulette's House Bedrooms {paulette_house.bedrooms}")
@@ -73,10 +88,10 @@ print("End of print")
 print("---------------------------------------------------------")
 
 
-daniel_house=House()
+daniel_house=House(owner="Daniel", location="Muranga") #__init__()
 # daniel_house.owner="Daniel"
 # daniel_house.change_location("Kiambu")
-daniel_house.config(owner="Daniel", location="Muranga")
+#daniel_house.config(owner="Daniel", location="Muranga")
 print(f"Daniel's House Owner {daniel_house.owner}")
 print(f"Daniel's House Location {daniel_house.location}")
 print(f"Daniel's House Bedrooms {daniel_house.bedrooms}")
