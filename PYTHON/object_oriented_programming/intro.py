@@ -15,7 +15,7 @@ Concept in programming to make work easy
    
    3. Inheritance
          - One class to reuse or extend properties and methods of another class
-   4. Polymorphism
+   4. Polymorphism <works only with inheritance>
          - Appearing in different forms. Method can have diff behaviors
 -----------------------------------
 
