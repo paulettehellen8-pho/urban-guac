@@ -1,0 +1,1 @@
+To install in ubuntu-> <sudo apt install -y postgresql-common>
