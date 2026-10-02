@@ -59,3 +59,9 @@ Syntax for sql
 Constraints<DB INDEPENDENT>
 1. Not null<required>
 2. Unique<email>
+
+
+RELATIONSHIPS
+One to one <--> One to one
+One to many <--> Many to one
+Many to many <--> Many to many
