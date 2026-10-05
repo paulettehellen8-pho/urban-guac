@@ -1,8 +1,7 @@
 #Object relational mapping(ORM)
    #converts data between incompatible
-   #Object relational mapping (ORM)
-# Is a programming technique for converting data between incompatible
-# type systems in object-oriented programming languages.
+   #Object relational mapping (ORM) -> type systems in object-oriented programming languages.
+
 # This creates, in effect, a "virtual object database"
 # that can be used from within the programming language.
 
