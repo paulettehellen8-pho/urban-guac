@@ -61,3 +61,4 @@ https://pris.ly/d/getting-started
       pipenv install pydantic
       pipenv install 'pydantic[email]'
 
+pipenv install bcrypt

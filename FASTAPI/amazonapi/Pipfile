@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 uvicorn = {extras = ["standard"], version = "*"}
 prisma = "*"
-fastapi = "*"
 fastapi = {extras = ["standard"], version = "*"}
 pydantic = {extras = ["email"], version = "*"}
+bcrypt = "*"
 
 [dev-packages]
 
