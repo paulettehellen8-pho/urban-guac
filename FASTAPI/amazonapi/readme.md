@@ -47,3 +47,17 @@ https://pris.ly/d/getting-started
 
 -- pipenv run prisma db pull
 -- pipenv run prisma generate
+
+# Connect to our db
+
+# Routes we begin with are user/member riutes
+   - signup <create an account>
+   - login <authentification>
+
+==> pipenv run python app.py
+
+# For data validation(optional) use pydantic
+
+      pipenv install pydantic
+      pipenv install 'pydantic[email]'
+
