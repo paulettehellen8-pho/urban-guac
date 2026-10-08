@@ -62,3 +62,6 @@ https://pris.ly/d/getting-started
       pipenv install 'pydantic[email]'
 
 pipenv install bcrypt
+
+# Other routes
+   Crud operation for products

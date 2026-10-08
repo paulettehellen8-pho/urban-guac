@@ -3,10 +3,11 @@ from fastapi import FastAPI
 import uvicorn
 
 from routes.member import router as member_router
+from routes.product import router as product_router
 
-from prisma import Prisma
+from db import prisma
 
-prisma=Prisma()
+# prisma=Prisma()
 
 @asynccontextmanager
 async def lifespan(app:FastAPI):
@@ -17,8 +18,9 @@ async def lifespan(app:FastAPI):
 app=FastAPI(title="Amazon api", lifespan=lifespan)
 
 
-#Registe the routes
+#Register the routes
 app.include_router(member_router,prefix="/member")
+app.include_router(product_router,prefix="/product")
 
 @app.get("/")
 async def root():
