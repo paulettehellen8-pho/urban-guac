@@ -2,6 +2,7 @@ from fastapi import APIRouter,status,Request,HTTPException
 from pydantic import BaseModel,EmailStr
 import bcrypt
 from db import prisma
+from FASTAPI.amazonapi.auth import create_access_token
 
 router=APIRouter()
 
@@ -47,6 +48,9 @@ async def sign_up(payload:MemberSchema):
 
    # return {"message":"user sign up"}
 
+
+
+#Protection-> You are not a robot <2FA> <OTP>
 @router.post("/login",status_code=status.HTTP_200_OK, response_model=None)
 async def login(payload:LoginSchema):
 
@@ -67,4 +71,9 @@ async def login(payload:LoginSchema):
 
    if not bcrypt.checkpw(user_password,hashed_password):
       raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Invalid email or password")
-   return {"message":"Login successful", "member":member}
+   
+   encode={"id":member.id,"random":"cold ice"}
+   token=create_access_token(encode)
+   
+   
+   return {"message":"Login successful", "member":member, "token":token}

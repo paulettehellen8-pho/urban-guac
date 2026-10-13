@@ -9,6 +9,9 @@ prisma = "*"
 fastapi = {extras = ["standard"], version = "*"}
 pydantic = {extras = ["email"], version = "*"}
 bcrypt = "*"
+cloudinary = "*"
+pyjwt = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

@@ -1,8 +1,10 @@
 from datetime import datetime, timezone
-from fastapi import APIRouter,status,HTTPException
+from fastapi import APIRouter,status,HTTPException,Depends
 from pydantic import BaseModel
 from typing import Optional
 from db import prisma
+from cloud import delete_from_cloud
+from auth import get_current_member
 
 router=APIRouter()
 
@@ -39,9 +41,10 @@ async def product(payload:ProductSchema):
    return {"message":"New item added","product":new_product}
 
 #GET all products
-@router.get("/")
-async def get_all_products():
-   products=await prisma.product.find_many()
+@router.get("/")#route by route protection
+async def get_all_products(current_member=Depends(get_current_member)):
+   print(current_member)
+   products=await prisma.product.find_many(include={"product_image":True})
    # if not product:
    #       raise HTTPException(status_code=404, detail="Product doesn't exist")
    return products
@@ -52,7 +55,8 @@ async def get_all_products():
 async def get_product_by_id(product_id: str):
 
    product=await prisma.product.find_unique(
-      where={'id':product_id}      
+      where={'id':product_id},
+      include={"product_image":True}      
    )
 
    if not product:
@@ -95,10 +99,21 @@ async def delete_product(product_id: str):
    return {"message": "Product deleted", "id": product_id, "product": deleted_product}
 
 
+# @router.delete("/{product_id}")
+# async def delete_product(product_id: str):
+   
+#    deleted_product = await prisma.product.delete(
+#       where={'id': product_id}
+#    )
+
+#    if not deleted_product:
+#          raise HTTPException(status_code=404, detail="Product doesn't exist")
+#    return {"message": "Product deleted", "id": product_id, "product": deleted_product}
+
+
 
 
 
 
 #source : https://medium.com/@greatadib82/master-python-based-fast-api-rest-api-development-with-prisma-orm-mongodb-best-practices-c77e1016c3a3
-
 #Excel sheet to update products-> End point -> Route that accepts the excel sheet
