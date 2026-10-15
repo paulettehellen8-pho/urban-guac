@@ -5,14 +5,19 @@ import uvicorn
 from routes.member import router as member_router
 from routes.product import router as product_router
 from routes.product_image import router as product_image_router
+from routes.client_order_product import router as client_order_product_router
+from routes.client_order import router as client_order_router
+
 from auth import get_current_member
 from db import prisma
+from seed import seed_status
 
 # prisma=Prisma()
 
 @asynccontextmanager
 async def lifespan(app:FastAPI):
    await prisma.connect()
+   await seed_status()
    yield
    await prisma.disconnect()
 
@@ -23,7 +28,8 @@ app=FastAPI(title="Amazon api", lifespan=lifespan)
 app.include_router(member_router,prefix="/member")
 app.include_router(product_router,prefix="/product",dependencies=[Depends(get_current_member)])
 app.include_router(product_image_router,prefix="/product_image",dependencies=[Depends(get_current_member)])
-
+app.include_router(client_order_product_router,prefix="/client_order_product",dependencies=[Depends(get_current_member)])
+app.include_router(client_order_router,prefix="/client_order",dependencies=[Depends(get_current_member)])
 
 @app.get("/")
 async def root():
@@ -33,3 +39,4 @@ async def root():
 
 if __name__=="__main__":
    uvicorn.run("app:app", host="127.0.0.1", port=5555, reload=True, reload_excludes=["uploads/*"])
+   

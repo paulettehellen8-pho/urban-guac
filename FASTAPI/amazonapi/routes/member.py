@@ -2,7 +2,7 @@ from fastapi import APIRouter,status,Request,HTTPException
 from pydantic import BaseModel,EmailStr
 import bcrypt
 from db import prisma
-from FASTAPI.amazonapi.auth import create_access_token
+from auth import create_access_token
 
 router=APIRouter()
 
@@ -76,4 +76,8 @@ async def login(payload:LoginSchema):
    token=create_access_token(encode)
    
    
-   return {"message":"Login successful", "member":member, "token":token}
+   return {
+      "message":"Login successful",
+      "member":{"id":member.id,"name":member.name,"email":member.email},
+      "token":token
+   }

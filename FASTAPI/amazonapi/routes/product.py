@@ -89,14 +89,29 @@ async def update_product(product_id:str, payload:ProductSchema):
 # DELETE <the product>
 @router.delete("/{product_id}")
 async def delete_product(product_id: str):
+
+   # fetch the product WITH its images
+   product=await prisma.product.find_unique(
+      where={'id': product_id},
+      include={"product_image":True}
+   )
+
+   if not product:
+      raise HTTPException(status_code=404, detail="Product doesn't exist")
+
+   images=product.product_image
    
    deleted_product = await prisma.product.delete(
       where={'id': product_id}
    )
 
+   # remove each image file from cloudinary as well
+   for img in images:
+      delete_from_cloud(img.image)
+
    if not deleted_product:
          raise HTTPException(status_code=404, detail="Product doesn't exist")
-   return {"message": "Product deleted", "id": product_id, "product": deleted_product}
+   return {"message": "Product deleted", "id": product_id, "product": deleted_product,"images_deleted":len(images)}
 
 
 # @router.delete("/{product_id}")

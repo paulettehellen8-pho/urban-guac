@@ -26,7 +26,10 @@ async def get_current_member(credentials:HTTPAuthorizationCredentials=Depends(HT
    token=credentials.credentials
    print("TOKEN IS", token)
 
-   decoded=jwt.decode(token,JWT_SECRET_KEY,algorithms=[ALGORITHM],options={"verify_exp":False})
+   try:
+      decoded=jwt.decode(token,JWT_SECRET_KEY,algorithm=[ALGORITHM],options={"verify_exp":False})
+   except jwt.PyJWTError:
+      raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
 
    member_id=decoded.get("id")
    print("MEMBER_ID",member_id)
@@ -35,10 +38,10 @@ async def get_current_member(credentials:HTTPAuthorizationCredentials=Depends(HT
    current_time=datetime.now(timezone.utc).timestamp()
 
    if not exp or current_time>exp:
-      raise HTTPException(status_code=status.HTTP_401_AUTHORIZED, detail="Invalid token payload")
+      raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token expired")
 
    if not member_id:
-      raise HTTPException(status_code=status.HTTP_401_AUTHORIZED, detail="Invalid token payload")
+      raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token payload")
 
    member=await prisma.member.find_unique(where={"id":member_id})
 

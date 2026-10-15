@@ -33,3 +33,10 @@ Authentication
 
 Authorization
    - Does he have the right permissions <409>
+
+
+
+# Reasearch on pagination for products
+
+# Python fuzzy search <products>
+
