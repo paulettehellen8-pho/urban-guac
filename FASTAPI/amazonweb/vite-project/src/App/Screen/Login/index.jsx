@@ -9,6 +9,8 @@ function Screen() {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
 
+   //persist the token <local storage>
+
    const request = useAxios();
 
    const handleSignIn = async () => {
@@ -33,6 +35,10 @@ function Screen() {
       if (res?._error===true){
          return
       }
+
+      const responseData=res?.responseData
+      console.log(responseData)
+      setMember(responseData)
       // successful
       // make a request
    };
